@@ -51,6 +51,78 @@
       "repo_url": null,
       "live_url": null,
       "images": []
+    },
+    {
+      "id": 4,
+      "title": "Blue Team Splunk Log Analysis",
+      "category": "Blue Team Operations",
+      "summary": "Developed advanced Splunk scripts and dashboards for SIEM log analysis, threat detection, and incident investigation.",
+      "role": "Security Analyst",
+      "highlights": [
+        "Created custom Splunk searches and SPL scripts for real-time threat detection",
+        "Developed automated dashboards for security metrics and KPI tracking",
+        "Implemented correlation rules for multi-stage attack detection",
+        "Optimized log ingestion and search performance for large-scale environments"
+      ],
+      "tech": ["Splunk", "SPL", "SIEM", "Log Analysis", "Detection Engineering"],
+      "repo_url": null,
+      "live_url": null,
+      "images": []
+    },
+    {
+      "id": 5,
+      "title": "Computer Forensics Analysis",
+      "category": "Blue Team Operations",
+      "summary": "Hands-on experience in digital forensics investigation, evidence collection, and chain-of-custody procedures.",
+      "role": "Forensics Analyst",
+      "highlights": [
+        "Conducted disk imaging and analysis using forensic tools (EnCase, FTK, Autopsy)",
+        "Recovered deleted files and examined file systems (NTFS, FAT32, ext4)",
+        "Analyzed browser history, cache, and user artifacts",
+        "Generated forensic reports for legal and compliance purposes",
+        "Documented chain-of-custody for legal proceedings"
+      ],
+      "tech": ["Digital Forensics", "EnCase", "FTK", "Autopsy", "Evidence Analysis"],
+      "repo_url": null,
+      "live_url": null,
+      "images": []
+    },
+    {
+      "id": 6,
+      "title": "Metasploit Penetration Testing",
+      "category": "Red Team",
+      "summary": "Conducted vulnerability assessments and penetration testing using Metasploit Framework for security validation.",
+      "role": "Penetration Tester",
+      "highlights": [
+        "Developed custom Metasploit modules for targeted exploitation",
+        "Performed network reconnaissance and vulnerability scanning",
+        "Executed multi-stage payload delivery and exploitation",
+        "Documented exploitation paths and created remediation recommendations",
+        "Conducted proof-of-concept demonstrations for security weaknesses"
+      ],
+      "tech": ["Metasploit", "Penetration Testing", "Exploitation", "Post-Exploitation", "Payloads"],
+      "repo_url": null,
+      "live_url": null,
+      "images": []
+    },
+    {
+      "id": 7,
+      "title": "Arch Linux System Administration",
+      "category": "Infrastructure & DevOps",
+      "summary": "Expert configuration and hardening of Arch Linux systems for security, performance, and stability.",
+      "role": "System Administrator",
+      "highlights": [
+        "Installed and configured minimal Arch Linux systems from scratch",
+        "Implemented kernel hardening and system security controls",
+        "Managed package management with pacman and AUR",
+        "Configured firewalls (ufw, iptables) and network services",
+        "Optimized system performance and troubleshot Linux kernel issues",
+        "Implemented user management and file system encryption (LUKS)"
+      ],
+      "tech": ["Arch Linux", "Linux Administration", "Kernel Hardening", "System Security", "Bash"],
+      "repo_url": null,
+      "live_url": null,
+      "images": []
     }
   ]
 }

@@ -7,23 +7,41 @@
         { "name": "Threat Intelligence", "level": 4 },
         { "name": "Computer Forensics", "level": 4 },
         { "name": "Detection & Response", "level": 3 },
-        { "name": "Log Analysis", "level": 3 }
+        { "name": "Log Analysis", "level": 4 }
       ]
     },
     {
       "name": "Red Team",
       "skills": [
-        { "name": "Penetration Testing", "level": 2 },
+        { "name": "Penetration Testing", "level": 3 },
+        { "name": "Metasploit Framework", "level": 3 },
         { "name": "CTF Competitions", "level": 3 },
-        { "name": "Vulnerability Assessment", "level": 2 }
+        { "name": "Vulnerability Assessment", "level": 3 },
+        { "name": "Exploitation", "level": 3 }
       ]
     },
     {
-      "name": "GRC",
+      "name": "Security Tools",
       "skills": [
-        { "name": "Security Policies", "level": 2 },
-        { "name": "Risk Management", "level": 2 },
-        { "name": "Compliance (HIPAA, SOC2)", "level": 2 }
+        { "name": "Splunk", "level": 4 },
+        { "name": "SIEM (ELK Stack)", "level": 3 },
+        { "name": "Wireshark", "level": 4 },
+        { "name": "Burp Suite", "level": 3 },
+        { "name": "Metasploit", "level": 3 },
+        { "name": "EnCase (Digital Forensics)", "level": 3 },
+        { "name": "Autopsy", "level": 3 },
+        { "name": "CodeQL", "level": 2 },
+        { "name": "OWASP ZAP", "level": 2 }
+      ]
+    },
+    {
+      "name": "Programming & Scripting",
+      "skills": [
+        { "name": "Python", "level": 4 },
+        { "name": "JavaScript", "level": 3 },
+        { "name": "SQL", "level": 3 },
+        { "name": "Bash/Shell", "level": 4 },
+        { "name": "PowerShell", "level": 2 }
       ]
     },
     {
@@ -31,33 +49,49 @@
       "skills": [
         { "name": "AWS", "level": 2 },
         { "name": "Cloud Security", "level": 2 },
-        { "name": "Automation", "level": 3 }
+        { "name": "Docker", "level": 2 },
+        { "name": "Linux Administration", "level": 4 },
+        { "name": "Arch Linux", "level": 4 },
+        { "name": "System Hardening", "level": 3 }
       ]
     },
     {
-      "name": "Security Tools",
+      "name": "Virtualization",
       "skills": [
-        { "name": "SIEM (Splunk, ELK)", "level": 3 },
-        { "name": "Wireshark", "level": 3 },
-        { "name": "Burp Suite", "level": 2 },
-        { "name": "Metasploit", "level": 2 }
+        { "name": "VirtualBox", "level": 4 },
+        { "name": "VMware vSphere", "level": 3 },
+        { "name": "Hyper-V", "level": 2 },
+        { "name": "KVM", "level": 2 }
       ]
     },
     {
-      "name": "Programming",
+      "name": "GRC & Compliance",
       "skills": [
-        { "name": "Python", "level": 4 },
-        { "name": "JavaScript", "level": 3 },
-        { "name": "SQL", "level": 3 },
-        { "name": "Bash/Shell", "level": 3 }
+        { "name": "Security Policies", "level": 3 },
+        { "name": "Risk Management", "level": 3 },
+        { "name": "Compliance (HIPAA, SOC2)", "level": 2 },
+        { "name": "Evidence Management", "level": 3 },
+        { "name": "Chain of Custody", "level": 3 }
       ]
     },
     {
-      "name": "Methodologies",
+      "name": "Methodologies & Frameworks",
       "skills": [
         { "name": "NIST Cybersecurity Framework", "level": 3 },
         { "name": "Incident Response Playbooks", "level": 3 },
-        { "name": "Security Documentation", "level": 3 }
+        { "name": "MITRE ATT&CK Framework", "level": 3 },
+        { "name": "Threat Modeling", "level": 2 },
+        { "name": "CI/CD/DevSecOps", "level": 2 }
+      ]
+    },
+    {
+      "name": "Hard Skills & Certifications",
+      "skills": [
+        { "name": "ISC2 SSCP Certified", "level": 5 },
+        { "name": "Kernel Hardening", "level": 3 },
+        { "name": "Network Protocols", "level": 3 },
+        { "name": "Cryptography Basics", "level": 2 },
+        { "name": "API Security", "level": 3 }
       ]
     }
   ]
