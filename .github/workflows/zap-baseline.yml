@@ -1,0 +1,37 @@
+name: OWASP ZAP - DAST Baseline
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run nightly at 3 AM UTC
+    - cron: "0 3 * * *"
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  zap-scan:
+    runs-on: ubuntu-latest
+    name: DAST Baseline Scan
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.7.0
+        with:
+          # Replace with your GitHub Pages URL
+          target: "https://yourusername.github.io/portfolio"
+          rules_file_name: ".zap/rules.tsv"
+          cmd_options: "-a"
+          fail_action: true
+
+      - name: Upload ZAP Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zap-report
+          path: |
+            report_html.html
+            report_md.md

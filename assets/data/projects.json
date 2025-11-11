@@ -1,0 +1,56 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "MARO Cognitive Security Platform",
+      "category": "Full-Stack Security",
+      "summary": "Contributed to a cognitive security platform reducing human risk through behavioral modeling and policy enforcement.",
+      "role": "Cybersecurity Engineer Intern",
+      "highlights": [
+        "Developed JavaScript-based clickjacking detection logic for browser extension UI protection",
+        "Built robust pytest suites supporting stable CI/CD deployments via GitHub",
+        "Engineered API workflows using Python and SQL for real-time behavioral data processing",
+        "Collaborated cross-functionally with engineering, product, and design teams"
+      ],
+      "tech": ["Python", "JavaScript", "SQL", "GitHub", "pytest", "CI/CD"],
+      "repo_url": "https://github.com",
+      "live_url": null,
+      "images": []
+    },
+    {
+      "id": 2,
+      "title": "Incident Response Program Maturation",
+      "category": "Blue Team Operations",
+      "summary": "Assisted Sony Pictures Entertainment in maturing IR capabilities through automation and process refinement.",
+      "role": "Incident Response Intern",
+      "highlights": [
+        "Supported IR events across corporate and subsidiary environments",
+        "Developed incident response playbooks and knowledge base documentation",
+        "Implemented new alerts and detection controls with Threat Intelligence teams",
+        "Collected and analyzed forensic data during active incidents",
+        "Focused on automation to improve IR response efficiency"
+      ],
+      "tech": ["Incident Response", "Computer Forensics", "Threat Intelligence", "Automation"],
+      "repo_url": null,
+      "live_url": null,
+      "images": []
+    },
+    {
+      "id": 3,
+      "title": "CSULB Cybersecurity Club Leadership",
+      "category": "Community & Education",
+      "summary": "Established and led campus cybersecurity community, driving engagement and CTF participation.",
+      "role": "President",
+      "highlights": [
+        "Managed club operations and organized CTF competition participation",
+        "Implemented strategies to enhance member engagement and collaborative learning",
+        "Built inclusive environment fostering hands-on cybersecurity skill development",
+        "Currently leading 100+ members in security research and competitions"
+      ],
+      "tech": ["CTF", "Security Research", "Team Leadership", "Education"],
+      "repo_url": null,
+      "live_url": null,
+      "images": []
+    }
+  ]
+}

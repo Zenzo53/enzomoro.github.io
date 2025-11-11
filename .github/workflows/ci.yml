@@ -1,0 +1,78 @@
+name: CI - HTML/CSS/Links/Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+
+jobs:
+  validate-html:
+    runs-on: ubuntu-latest
+    name: Validate HTML
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run html5validator
+        uses: Cybozu-Labs/html5validator-action@v1.8.2
+        with:
+          root: .
+
+      - name: Upload HTML validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-validation-report
+          path: ./
+
+  validate-css:
+    runs-on: ubuntu-latest
+    name: Validate CSS
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install stylelint
+        run: npx stylelint --version
+
+      - name: Run stylelint
+        run: npx stylelint "**/*.css" --formatter json > stylelint-report.json || true
+
+      - name: Upload CSS validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: css-validation-report
+          path: stylelint-report.json
+
+  check-links:
+    runs-on: ubuntu-latest
+    name: Check for Broken Links
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v1.9.0
+        with:
+          args: --verbose --max-concurrency 10 --max-retries 3 .
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload link check report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lychee-report
+          path: lychee/out.md

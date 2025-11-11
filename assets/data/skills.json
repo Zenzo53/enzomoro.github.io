@@ -1,0 +1,64 @@
+{
+  "categories": [
+    {
+      "name": "Blue Team",
+      "skills": [
+        { "name": "Incident Response", "level": 4 },
+        { "name": "Threat Intelligence", "level": 4 },
+        { "name": "Computer Forensics", "level": 4 },
+        { "name": "Detection & Response", "level": 3 },
+        { "name": "Log Analysis", "level": 3 }
+      ]
+    },
+    {
+      "name": "Red Team",
+      "skills": [
+        { "name": "Penetration Testing", "level": 2 },
+        { "name": "CTF Competitions", "level": 3 },
+        { "name": "Vulnerability Assessment", "level": 2 }
+      ]
+    },
+    {
+      "name": "GRC",
+      "skills": [
+        { "name": "Security Policies", "level": 2 },
+        { "name": "Risk Management", "level": 2 },
+        { "name": "Compliance (HIPAA, SOC2)", "level": 2 }
+      ]
+    },
+    {
+      "name": "Cloud & Infrastructure",
+      "skills": [
+        { "name": "AWS", "level": 2 },
+        { "name": "Cloud Security", "level": 2 },
+        { "name": "Automation", "level": 3 }
+      ]
+    },
+    {
+      "name": "Security Tools",
+      "skills": [
+        { "name": "SIEM (Splunk, ELK)", "level": 3 },
+        { "name": "Wireshark", "level": 3 },
+        { "name": "Burp Suite", "level": 2 },
+        { "name": "Metasploit", "level": 2 }
+      ]
+    },
+    {
+      "name": "Programming",
+      "skills": [
+        { "name": "Python", "level": 4 },
+        { "name": "JavaScript", "level": 3 },
+        { "name": "SQL", "level": 3 },
+        { "name": "Bash/Shell", "level": 3 }
+      ]
+    },
+    {
+      "name": "Methodologies",
+      "skills": [
+        { "name": "NIST Cybersecurity Framework", "level": 3 },
+        { "name": "Incident Response Playbooks", "level": 3 },
+        { "name": "Security Documentation", "level": 3 }
+      ]
+    }
+  ]
+}

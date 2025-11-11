@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevSecOps | Enzo Calvo</title>
+    <meta
+      name="description"
+      content="Security practices: SAST (CodeQL), DAST (OWASP ZAP), Secret Scanning (Gitleaks), Lighthouse CI, and more."
+    />
+    <link rel="canonical" href="https://yourdomain.com/devsecops.html" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+
+    <header role="banner">
+      <nav role="navigation" aria-label="Main navigation">
+        <div class="logo">Enzo Calvo</div>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+          ☰
+        </button>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="devsecops.html" class="active">DevSecOps</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" role="main">
+      <!-- Hero -->
+      <section
+        class="hero"
+        style="min-height: 50vh; padding: var(--spacing-2xl) var(--spacing-lg)"
+      >
+        <div class="hero-content">
+          <h1>DevSecOps & Security Posture</h1>
+          <p class="subtitle">
+            GitHub Actions automation for continuous security, quality, and performance
+          </p>
+        </div>
+      </section>
+
+      <!-- SAST Section -->
+      <section role="region" aria-label="Static Application Security Testing">
+        <div class="container">
+          <h2>SAST: CodeQL for JavaScript</h2>
+          <div class="card">
+            <h3>What & Why</h3>
+            <p>
+              <strong>CodeQL</strong> is GitHub's industry-leading static analysis engine that
+              identifies security vulnerabilities and code quality issues at the source level.
+              For JavaScript, it detects:
+            </p>
+            <ul style="margin-left: var(--spacing-lg); color: var(--color-text-secondary);">
+              <li>XSS (Cross-Site Scripting) vulnerabilities</li>
+              <li>SQL Injection risks</li>
+              <li>CSRF (Cross-Site Request Forgery) patterns</li>
+              <li>Insecure cryptography usage</li>
+              <li>Path traversal flaws</li>
+            </ul>
+            <p style="margin-top: var(--spacing-lg);">
+              <strong>Where to See Results:</strong> Check the
+              <a href="#" target="_blank" rel="noopener noreferrer">Security tab → Code scanning</a>
+              in the repository settings. Alerts are prioritized by severity.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DAST Section -->
+      <section role="region" aria-label="Dynamic Application Security Testing">
+        <div class="container">
+          <h2>DAST: OWASP ZAP Baseline</h2>
+          <div class="card">
+            <h3>What & Why</h3>
+            <p>
+              <strong>OWASP ZAP (Zed Attack Proxy)</strong> is a dynamic security scanner that
+              tests the live application against OWASP Top 10 threats. It runs automated scans
+              against the deployed GitHub Pages site on a schedule (nightly) and on manual trigger.
+            </p>
+            <p style="margin-top: var(--spacing-md);">
+              <strong>Baseline Mode</strong> performs rapid, low-risk passive scanning suitable for
+              CI/CD pipelines. Detects:
+            </p>
+            <ul style="margin-left: var(--spacing-lg); color: var(--color-text-secondary);">
+              <li>Missing security headers (CSP, X-Frame-Options, etc.)</li>
+              <li>Cookie misconfigurations</li>
+              <li>SSL/TLS issues</li>
+              <li>Information disclosure leaks</li>
+              <li>Outdated library versions</li>
+            </ul>
+            <p style="margin-top: var(--spacing-lg);">
+              <strong>Workflow:</strong> Runs on <code>.github/workflows/zap-baseline.yml</code>.
+              High/Medium alerts cause workflow failure; Low severity are logged.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Secret Scanning Section -->
+      <section role="region" aria-label="Secret Scanning">
+        <div class="container">
+          <h2>Secret Scanning: Gitleaks</h2>
+          <div class="card">
+            <h3>What & Why</h3>
+            <p>
+              <strong>Gitleaks</strong> detects sensitive information (API keys, passwords, tokens,
+              private keys) accidentally committed to version control. It runs on every push and
+              pull request to prevent secrets from reaching the repository or being exposed in
+              history.
+            </p>
+            <p style="margin-top: var(--spacing-md);">
+              <strong>Policy:</strong> Any detected secret causes the workflow to fail and block
+              the commit. This enforces a zero-tolerance approach for credential exposure.
+            </p>
+            <p style="margin-top: var(--spacing-md);">
+              <strong>Best Practices:</strong>
+            </p>
+            <ul style="margin-left: var(--spacing-lg); color: var(--color-text-secondary);">
+              <li>Use environment variables or GitHub Secrets for sensitive data</li>
+              <li>Never hardcode credentials in code</li>
+              <li>Use `.gitignore` for `.env` and config files</li>
+              <li>Rotate any exposed credentials immediately</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Link Checker Section -->
+      <section role="region" aria-label="Link Checking">
+        <div class="container">
+          <h2>Link Checker: Lychee</h2>
+          <div class="card">
+            <h3>What & Why</h3>
+            <p>
+              <strong>Lychee</strong> scans the entire site for broken links, ensuring all internal
+              and external references are valid. Broken links harm user experience and SEO.
+            </p>
+            <p style="margin-top: var(--spacing-md);">
+              <strong>Workflow:</strong> Runs on every push. Fails on dead links; ignores error
+              pages (404) by configuration.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lighthouse CI Section -->
+      <section role="region" aria-label="Lighthouse CI">
+        <div class="container">
+          <h2>Lighthouse CI: Performance & Accessibility</h2>
+          <div class="card">
+            <h3>What & Why</h3>
+            <p>
+              <strong>Lighthouse CI</strong> audits the live site for performance, accessibility,
+              SEO, and best practices. Budgets are set to enforce quality thresholds on every
+              deployment.
+            </p>
+            <p style="margin-top: var(--spacing-md);">
+              <strong>Budgets:</strong>
+            </p>
+            <ul style="margin-left: var(--spacing-lg); color: var(--color-text-secondary);">
+              <li><strong>Performance:</strong> ≥ 90</li>
+              <li><strong>Accessibility:</strong> ≥ 95</li>
+              <li><strong>SEO:</strong> ≥ 90</li>
+              <li><strong>Best Practices:</strong> ≥ 90</li>
+            </ul>
+            <p style="margin-top: var(--spacing-lg);">
+              <strong>Reports:</strong> Uploaded as workflow artifacts for review and historical
+              tracking.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CSP Section -->
+      <section role="region" aria-label="Content Security Policy">
+        <div class="container">
+          <h2>Content Security Policy (CSP)</h2>
+          <div class="card">
+            <h3>What & Why</h3>
+            <p>
+              <strong>CSP</strong> mitigates XSS, clickjacking, and injection attacks by restricting
+              the sources from which content can be loaded. This site uses a <strong>Report-Only</strong>
+              policy to monitor violations without blocking functionality.
+            </p>
+            <p style="margin-top: var(--spacing-md);">
+              <strong>Recommended CSP (Report-Only):</strong>
+            </p>
+            <pre style="background-color: var(--color-bg-tertiary); padding: var(--spacing-lg); border-radius: var(--border-radius-md); overflow-x: auto; font-size: var(--font-size-sm);">
+&lt;meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' https://plausible.io;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  img-src 'self' data: https:;
+  font-src 'self' https://fonts.gstatic.com;
+  connect-src 'self' https://formspree.io https://plausible.io;
+  frame-ancestors 'none'
+" /&gt;
+            </pre>
+            <p style="margin-top: var(--spacing-md);">
+              <strong>GitHub Pages Limitations:</strong> Pages doesn't support HTTP headers for CSP,
+              so the meta tag is the primary enforcement mechanism. See <a href="SECURITY.md">SECURITY.md</a>
+              for full CSP guidance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SBOM Section -->
+      <section role="region" aria-label="Software Bill of Materials">
+        <div class="container">
+          <h2>Software Bill of Materials (SBOM)</h2>
+          <div class="card">
+            <h3>What & Why</h3>
+            <p>
+              A <strong>Software Bill of Materials (SBOM)</strong> is an inventory of all software
+              components and dependencies. This static site has minimal build dependencies; however,
+              third-party assets are documented:
+            </p>
+            <h4 style="margin-top: var(--spacing-md); color: var(--color-accent-primary);">Third-Party Assets</h4>
+            <ul style="margin-left: var(--spacing-lg); color: var(--color-text-secondary);">
+              <li><strong>Fonts:</strong> System UI font stack (no external CDN)</li>
+              <li><strong>Icons:</strong> Unicode symbols (no dependencies)</li>
+              <li><strong>Analytics (Optional):</strong> Plausible Analytics (privacy-focused)</li>
+              <li><strong>Forms (Optional):</strong> Formspree (for serverless form handling)</li>
+            </ul>
+            <p style="margin-top: var(--spacing-lg);">
+              <strong>No npm/build dependencies</strong> are committed. All security tooling runs in
+              GitHub Actions CI/CD.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Security Docs -->
+      <section role="region" aria-label="Security Documentation">
+        <div class="container">
+          <h2>Security Documentation</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3>SECURITY.md</h3>
+              <p>
+                Comprehensive security policy, CSP guidelines, incident reporting, and best practices.
+              </p>
+              <a href="SECURITY.md" class="btn btn-small" target="_blank" rel="noopener noreferrer">Read Policy</a>
+            </div>
+
+            <div class="card">
+              <h3>Threat Model</h3>
+              <p>
+                Threat modeling, attack vectors, and mitigation strategies for this portfolio site.
+              </p>
+              <a href="threat-model.md" class="btn btn-small" target="_blank" rel="noopener noreferrer">View Threat Model</a>
+            </div>
+
+            <div class="card">
+              <h3>ACCESSIBILITY.md</h3>
+              <p>
+                WCAG 2.1 AA+ compliance details, keyboard navigation, ARIA landmarks, and testing.
+              </p>
+              <a href="ACCESSIBILITY.md" class="btn btn-small" target="_blank" rel="noopener noreferrer">Accessibility Guide</a>
+            </div>
+
+            <div class="card">
+              <h3>PERFORMANCE.md</h3>
+              <p>
+                Performance optimization techniques, metrics, and Lighthouse budget targets.
+              </p>
+              <a href="PERFORMANCE.md" class="btn btn-small" target="_blank" rel="noopener noreferrer">Performance Details</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GitHub Actions Summary -->
+      <section style="padding: var(--spacing-2xl) var(--spacing-lg); background-color: rgba(25, 31, 58, 0.5);">
+        <div class="container">
+          <h2>GitHub Actions Workflows</h2>
+          <p>All workflows are located in <code>.github/workflows/</code> and run automatically or on-demand:</p>
+          <div style="margin-top: var(--spacing-lg);">
+            <p><strong>ci.yml</strong> – HTML/CSS validation, link checks (on push & PR)</p>
+            <p><strong>codeql.yml</strong> – SAST scanning (JavaScript)</p>
+            <p><strong>zap-baseline.yml</strong> – DAST scanning (nightly + manual)</p>
+            <p><strong>gitleaks.yml</strong> – Secret scanning (on push & PR)</p>
+            <p><strong>lighthouse.yml</strong> – Performance & accessibility (on push to main)</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="social-links">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+          >GitHub</a
+        >
+        <a
+          href="https://linkedin.com/in"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn</a
+        >
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+          >Twitter</a
+        >
+      </div>
+      <div class="footer-content">
+        <p>© 2025 Enzo Calvo. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/nav.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
