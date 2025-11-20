@@ -58,6 +58,26 @@
   --transition-slow: 500ms ease-in-out;
 }
 
+/* Light Theme Variables */
+[data-theme="light"] {
+  --color-bg-primary: #f8fafc;
+  --color-bg-secondary: #f1f5f9;
+  --color-bg-tertiary: #e2e8f0;
+  --color-accent-primary: #059669;
+  --color-accent-secondary: #0284c7;
+  --color-accent-danger: #dc2626;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  --color-border: #cbd5e1;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 25px rgba(5, 150, 105, 0.1);
+  --shadow-glow: 0 0 20px rgba(5, 150, 105, 0.15);
+}
+
 /* ========================================
    GLOBAL STYLES
    ======================================== */
@@ -214,6 +234,30 @@ nav a.active {
   font-size: var(--font-size-xl);
   cursor: pointer;
   padding: var(--spacing-sm);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.theme-toggle:hover {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.theme-toggle .theme-icon {
+  font-size: var(--font-size-lg);
+  display: inline-block;
 }
 
 /* Buttons */
@@ -663,6 +707,192 @@ footer {
 
 .footer-content {
   font-size: var(--font-size-sm);
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: var(--spacing-xl);
+  right: var(--spacing-xl);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-accent-primary);
+  color: var(--color-bg-primary);
+  border: none;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background: var(--color-accent-secondary);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-5px);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-2px);
+}
+
+/* Lightbox Image Viewer */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.lightbox-caption {
+  color: var(--color-text-primary);
+  text-align: center;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  background: rgba(10, 14, 39, 0.8);
+  border-radius: var(--border-radius-md);
+  margin-top: var(--spacing-md);
+  max-width: 600px;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-3xl);
+  cursor: pointer;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-base);
+  backdrop-filter: blur(10px);
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: var(--color-bg-primary);
+}
+
+.lightbox-close {
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--spacing-lg);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: var(--spacing-lg);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-trigger {
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.lightbox-trigger:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Copy to Clipboard Button */
+.copy-btn {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  z-index: 10;
+}
+
+.copy-btn:hover {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+}
+
+.copy-btn.copied {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: white;
+}
+
+.copy-btn .copy-icon {
+  font-size: var(--font-size-sm);
+}
+
+.copy-btn .copy-text {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Ensure code blocks can contain copy button */
+pre {
+  position: relative;
 }
 
 /* ========================================

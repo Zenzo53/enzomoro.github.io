@@ -29,6 +29,11 @@
           <li><a href="about.html" class="active">About</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+              <span class="theme-icon">☀️</span>
+            </button>
+          </li>
         </ul>
       </nav>
     </header>
@@ -53,23 +58,16 @@
         <div class="container">
           <h2>Professional Summary</h2>
           <p>
-            I'm a cybersecurity specialist with a passion for incident response,
-            threat intelligence, and building secure systems. Currently an Intern
-            in Incident Response at Sony Pictures Entertainment, I bring
-            practical experience in forensic analysis, threat investigation, and
-            IR program maturation.
+            I'm passionate about cybersecurity and obsessed with defending systems against evolving threats. My goal is to bridge the gap between development and security—making organizations more resilient through proactive threat detection, forensic analysis, and secure engineering practices.
           </p>
           <p>
-            Previously, I contributed to MARO, a cognitive security platform,
-            where I developed secure JavaScript features, built automated testing
-            suites, and collaborated across engineering and product teams. My
-            foundation is solid in Python, security tools, and modern DevOps
-            practices.
+            I thrive on challenging problems: hunting threats in massive log files, uncovering vulnerabilities in complex systems, and building automation that scales. Whether I'm analyzing forensic artifacts, crafting Splunk queries, or testing exploits in a lab environment, I bring curiosity, precision, and a genuine enthusiasm for continuous learning.
           </p>
           <p>
-            Beyond work, I lead the CSULB Cybersecurity Club, fostering a
-            community of 100+ members focused on CTF competitions and hands-on
-            security research.
+            Beyond technical skills, I'm driven by community impact. I co-founded and lead the CSULB Cybersecurity Club to empower the next generation of security professionals. I believe in sharing knowledge, mentoring others, and proving that cybersecurity is accessible to anyone willing to learn.
+          </p>
+          <p style="font-weight: 600; color: var(--color-accent-primary);">
+            Looking to contribute my skills to organizations where security is a priority, innovation is encouraged, and I can grow alongside talented teams.
           </p>
         </div>
       </section>
@@ -216,25 +214,28 @@
 
     <footer role="contentinfo">
       <div class="social-links">
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer"
-          >GitHub</a
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub"
+          >🐙 GitHub</a
         >
         <a
           href="https://www.linkedin.com/in/enzocmoro/"
           target="_blank"
           rel="noopener noreferrer"
-          >LinkedIn</a
+          title="LinkedIn"
+          >💼 LinkedIn</a
         >
-        <a href="https://open.spotify.com/user/enzocmoro-br?si=728c3e573cd54afa" target="_blank" rel="noopener noreferrer"
-          >Spotify</a
+        <a href="https://open.spotify.com/user/enzocmoro-br?si=728c3e573cd54afa" target="_blank" rel="noopener noreferrer" title="Spotify"
+          >🎵 Spotify</a
         >
-        <a href="mailto:enzocmoro@gmail.com">Email</a>
+        <a href="mailto:enzocmoro@gmail.com" title="Email">📧 Email</a>
       </div>
       <div class="footer-content">
         <p>© 2025 Enzo Moro. All rights reserved.</p>
       </div>
     </footer>
 
+    <script src="js/theme.js"></script>
+    <script src="js/scroll-to-top.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/main.js"></script>
     <script>
@@ -259,10 +260,43 @@
               const skillItem = document.createElement("div");
               skillItem.className = "skill-item";
 
+              // Icon + Name
+              const nameContainer = document.createElement("div");
+              nameContainer.style.display = "flex";
+              nameContainer.style.alignItems = "center";
+              nameContainer.style.gap = "8px";
+              nameContainer.style.marginBottom = "var(--spacing-sm)";
+
+              const icon = document.createElement("span");
+              icon.textContent = skill.icon || "•";
+              icon.style.fontSize = "20px";
+
               const name = document.createElement("div");
               name.className = "skill-name";
               name.textContent = skill.name;
 
+              nameContainer.appendChild(icon);
+              nameContainer.appendChild(name);
+
+              // Score display with stars
+              const scoreContainer = document.createElement("div");
+              scoreContainer.style.display = "flex";
+              scoreContainer.style.alignItems = "center";
+              scoreContainer.style.gap = "8px";
+
+              const stars = document.createElement("div");
+              stars.style.fontSize = "14px";
+              stars.style.letterSpacing = "2px";
+              stars.textContent = "⭐".repeat(skill.level) + "☆".repeat(5 - skill.level);
+
+              const scoreText = document.createElement("div");
+              scoreText.className = "skill-level";
+              scoreText.textContent = `${skill.level}/5`;
+
+              scoreContainer.appendChild(stars);
+              scoreContainer.appendChild(scoreText);
+
+              // Bar
               const bar = document.createElement("div");
               bar.className = "skill-bar";
 
@@ -271,15 +305,11 @@
               const percentage = (skill.level / 5) * 100;
               fill.style.width = `${percentage}%`;
 
-              const level = document.createElement("div");
-              level.className = "skill-level";
-              level.textContent = `${skill.level}/5`;
-
               bar.appendChild(fill);
 
-              skillItem.appendChild(name);
+              skillItem.appendChild(nameContainer);
+              skillItem.appendChild(scoreContainer);
               skillItem.appendChild(bar);
-              skillItem.appendChild(level);
 
               categoryDiv.appendChild(skillItem);
             });

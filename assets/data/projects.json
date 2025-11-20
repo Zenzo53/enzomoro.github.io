@@ -2,62 +2,10 @@
   "projects": [
     {
       "id": 1,
-      "title": "MARO Cognitive Security Platform",
-      "category": "Full-Stack Security",
-      "summary": "Contributed to a cognitive security platform reducing human risk through behavioral modeling and policy enforcement.",
-      "role": "Cybersecurity Engineer Intern",
-      "highlights": [
-        "Developed JavaScript-based clickjacking detection logic for browser extension UI protection",
-        "Built robust pytest suites supporting stable CI/CD deployments via GitHub",
-        "Engineered API workflows using Python and SQL for real-time behavioral data processing",
-        "Collaborated cross-functionally with engineering, product, and design teams"
-      ],
-      "tech": ["Python", "JavaScript", "SQL", "GitHub", "pytest", "CI/CD"],
-      "repo_url": "https://github.com",
-      "live_url": null,
-      "images": []
-    },
-    {
-      "id": 2,
-      "title": "Incident Response Program Maturation",
-      "category": "Blue Team Operations",
-      "summary": "Assisted Sony Pictures Entertainment in maturing IR capabilities through automation and process refinement.",
-      "role": "Incident Response Intern",
-      "highlights": [
-        "Supported IR events across corporate and subsidiary environments",
-        "Developed incident response playbooks and knowledge base documentation",
-        "Implemented new alerts and detection controls with Threat Intelligence teams",
-        "Collected and analyzed forensic data during active incidents",
-        "Focused on automation to improve IR response efficiency"
-      ],
-      "tech": ["Incident Response", "Computer Forensics", "Threat Intelligence", "Automation"],
-      "repo_url": null,
-      "live_url": null,
-      "images": []
-    },
-    {
-      "id": 3,
-      "title": "CSULB Cybersecurity Club Leadership",
-      "category": "Community & Education",
-      "summary": "Established and led campus cybersecurity community, driving engagement and CTF participation.",
-      "role": "President",
-      "highlights": [
-        "Managed club operations and organized CTF competition participation",
-        "Implemented strategies to enhance member engagement and collaborative learning",
-        "Built inclusive environment fostering hands-on cybersecurity skill development",
-        "Currently leading 100+ members in security research and competitions"
-      ],
-      "tech": ["CTF", "Security Research", "Team Leadership", "Education"],
-      "repo_url": null,
-      "live_url": null,
-      "images": []
-    },
-    {
-      "id": 4,
       "title": "Blue Team Splunk Log Analysis",
-      "category": "Blue Team Operations",
+      "category": "Security Engineering",
       "summary": "Developed advanced Splunk scripts and dashboards for SIEM log analysis, threat detection, and incident investigation.",
-      "role": "Security Analyst",
+      "role": "Security Engineer",
       "highlights": [
         "Created custom Splunk searches and SPL scripts for real-time threat detection",
         "Developed automated dashboards for security metrics and KPI tracking",
@@ -70,16 +18,16 @@
       "images": []
     },
     {
-      "id": 5,
-      "title": "Computer Forensics Analysis",
-      "category": "Blue Team Operations",
-      "summary": "Hands-on experience in digital forensics investigation, evidence collection, and chain-of-custody procedures.",
-      "role": "Forensics Analyst",
+      "id": 2,
+      "title": "Computer Forensics Analysis Toolkit",
+      "category": "Security Engineering",
+      "summary": "Built digital forensics analysis framework for evidence collection, examination, and chain-of-custody documentation.",
+      "role": "Forensics Engineer",
       "highlights": [
         "Conducted disk imaging and analysis using forensic tools (EnCase, FTK, Autopsy)",
         "Recovered deleted files and examined file systems (NTFS, FAT32, ext4)",
         "Analyzed browser history, cache, and user artifacts",
-        "Generated forensic reports for legal and compliance purposes",
+        "Automated report generation for legal and compliance purposes",
         "Documented chain-of-custody for legal proceedings"
       ],
       "tech": ["Digital Forensics", "EnCase", "FTK", "Autopsy", "Evidence Analysis"],
@@ -88,15 +36,15 @@
       "images": []
     },
     {
-      "id": 6,
-      "title": "Metasploit Penetration Testing",
+      "id": 3,
+      "title": "Metasploit Exploitation Lab",
       "category": "Red Team",
-      "summary": "Conducted vulnerability assessments and penetration testing using Metasploit Framework for security validation.",
+      "summary": "Created proof-of-concept exploitation scenarios using Metasploit Framework for security validation and learning.",
       "role": "Penetration Tester",
       "highlights": [
         "Developed custom Metasploit modules for targeted exploitation",
         "Performed network reconnaissance and vulnerability scanning",
-        "Executed multi-stage payload delivery and exploitation",
+        "Executed multi-stage payload delivery and exploitation chains",
         "Documented exploitation paths and created remediation recommendations",
         "Conducted proof-of-concept demonstrations for security weaknesses"
       ],
@@ -106,20 +54,38 @@
       "images": []
     },
     {
-      "id": 7,
-      "title": "Arch Linux System Administration",
+      "id": 4,
+      "title": "Arch Linux Hardened System",
       "category": "Infrastructure & DevOps",
-      "summary": "Expert configuration and hardening of Arch Linux systems for security, performance, and stability.",
+      "summary": "Configured and hardened minimal Arch Linux systems with security best practices and kernel hardening.",
       "role": "System Administrator",
       "highlights": [
-        "Installed and configured minimal Arch Linux systems from scratch",
+        "Installed minimal Arch Linux systems from scratch",
         "Implemented kernel hardening and system security controls",
         "Managed package management with pacman and AUR",
         "Configured firewalls (ufw, iptables) and network services",
-        "Optimized system performance and troubleshot Linux kernel issues",
+        "Optimized system performance and troubleshot kernel issues",
         "Implemented user management and file system encryption (LUKS)"
       ],
       "tech": ["Arch Linux", "Linux Administration", "Kernel Hardening", "System Security", "Bash"],
+      "repo_url": null,
+      "live_url": null,
+      "images": []
+    },
+    {
+      "id": 5,
+      "title": "CTF Competition Challenges",
+      "category": "Red Team",
+      "summary": "Solved complex capture-the-flag challenges involving cryptography, reverse engineering, web exploits, and binary analysis.",
+      "role": "CTF Competitor",
+      "highlights": [
+        "Competed in regional and national CTF competitions",
+        "Solved crypto challenges and reverse-engineered binaries",
+        "Exploited web vulnerabilities and bypass security controls",
+        "Collaborated with teams to solve complex multi-part challenges",
+        "Ranked top teams in cybersecurity competitions"
+      ],
+      "tech": ["CTF", "Cryptography", "Reverse Engineering", "Web Exploitation", "Binary Analysis"],
       "repo_url": null,
       "live_url": null,
       "images": []

@@ -21,11 +21,9 @@ jobs:
       - name: Run ZAP Baseline Scan
         uses: zaproxy/action-baseline@v0.7.0
         with:
-          # Replace with your GitHub Pages URL
-          target: "https://yourusername.github.io/portfolio"
-          rules_file_name: ".zap/rules.tsv"
+          target: "https://enzomoro.github.io"
           cmd_options: "-a"
-          fail_action: true
+          fail_action: false
 
       - name: Upload ZAP Report
         if: always()

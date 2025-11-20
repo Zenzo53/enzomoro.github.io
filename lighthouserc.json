@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "url": ["https://yourusername.github.io"],
+      "url": ["https://enzomoro.github.io"],
       "numberOfRuns": 1,
       "settings": {
         "configPath": "./lighthouserc.json"
